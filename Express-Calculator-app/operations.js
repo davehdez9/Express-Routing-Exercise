@@ -1,5 +1,5 @@
 
-function average (){
+function average (nums){
     let total = 0
     for(let i = 0; i < nums.length; i++){
         total += nums[i]
@@ -25,6 +25,12 @@ function convertNumArray(nums){
 
     for(let i = 0; i < nums.length; i++){
         let valToNum = Number(nums[i])
+
+        if(Number.isNaN(valToNum)){
+            return new Error(
+                `The value ${nums[i]} is not a valid number`
+            )
+        }
         arr.push(valToNum)
     }
     return arr
